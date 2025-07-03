@@ -101,6 +101,9 @@ def download_repo(repo_url: str, local_path: str, type: str = "github", access_t
             elif type == "bitbucket":
                 # Format: https://{token}@bitbucket.org/owner/repo.git
                 clone_url = urlunparse((parsed.scheme, f"{access_token}@{parsed.netloc}", parsed.path, '', '', ''))
+            elif type == "gitee":
+                # Format: https://{token}@bitbucket.org/owner/repo.git
+                clone_url = urlunparse((parsed.scheme, f"{parsed.netloc}", parsed.path, '', '', ''))
             logger.info("Using access token for authentication")
 
         # Clone the repository
