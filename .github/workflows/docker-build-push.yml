@@ -68,6 +68,7 @@ jobs:
         id: build
         with:
           context: .
+          file: Dockerfile-ollama-local
           platforms: ${{ matrix.platform }}
           push: ${{ github.event_name != 'pull_request' }}
           annotations: ${{ steps.meta.outputs.annotations }}
